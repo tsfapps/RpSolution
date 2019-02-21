@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:background="@color/colorPrimaryDark"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!---->
+    <!--// "logintype": "driver",-->
+
+    <!--"adhaarno": "7857572752",-->
+    <!--"address": "south city 1 sector 40",-->
+    <!--"user_name": "test",-->
+    <!--"create_date": "2019-01-07",-->
+
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_profile_name"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:gravity="center_horizontal"
+            android:text="Tousif Akram"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            />
+        <android.support.v7.widget.CardView
+
+            android:elevation="22dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="20dp"
+            app:cardCornerRadius="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:padding="5dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.CardView
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    app:cardCornerRadius="60dp"
+                    android:elevation="20dp">
+                    <ImageView
+                        android:id="@+id/iv_pro_pic"
+                        android:background="@drawable/logo"
+                        android:scaleType="centerCrop"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView
+                    app:cardCornerRadius="2dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:background="@color/colorPrimary"
+                        android:gravity="center_vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:textSize="14sp"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="ACCOUNT DETAILS"
+                            android:textAllCaps="true"/>
+                        <!--<TextView-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:gravity="end"-->
+                        <!--android:textSize="14sp"-->
+                        <!--android:textStyle="bold"-->
+                        <!--android:drawableEnd="@drawable/ic_pro_pen"-->
+                        <!--android:textColor="@color/white"-->
+                        <!--android:id="@+id/tv_edit_profile"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="EDIT"-->
+                        <!--android:textAllCaps="true"/>-->
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textSize="12sp"
+                            android:layout_marginLeft="25dp"
+                            android:hint="Username"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp" />
+                        <TextView
+                            android:id="@+id/tv_profile_username"
+                            android:textSize="14dp"
+                            android:textStyle="bold"
+                            android:drawableStart="@drawable/ic_profile"
+                            android:layout_gravity="center_vertical"
+                            android:text="tsfgot@123"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <View
+                        android:layout_weight=".01"
+                        android:layout_marginTop="3dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_width="0dp"
+                        android:layout_margin="10dp"
+                        android:layout_height="match_parent"/>
+
+                    <LinearLayout
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textSize="12sp"
+                            android:hint="User Type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp" />
+                        <TextView
+                            android:id="@+id/tv_profile_user_type"
+                            android:textSize="14dp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_vertical"
+                            android:text="Employee"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            />
+
+                    </LinearLayout>
+                </LinearLayout>
+                <View
+                    android:layout_marginTop="3dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textSize="12sp"
+                            android:layout_marginLeft="25dp"
+                            android:hint="Phone Number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp" />
+                        <TextView
+                            android:id="@+id/tv_profile_phone"
+                            android:textSize="14dp"
+                            android:textStyle="bold"
+                            android:drawableStart="@drawable/ic_phone"
+                            android:layout_gravity="center_vertical"
+                            android:text="0987654321"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <View
+                        android:id="@+id/line_erv_num"
+                        android:layout_weight=".01"
+                        android:layout_marginTop="3dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_width="0dp"
+                        android:layout_margin="10dp"
+                        android:layout_height="match_parent"/>
+
+                    <LinearLayout
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/tvv_empId_label"
+                            android:textSize="12sp"
+                            android:hint="Employee Id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp" />
+                        <TextView
+                            android:id="@+id/tv_pro_emp_id"
+                            android:textSize="14dp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_vertical"
+                            android:text="tsf007emp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                </LinearLayout>
+                <View
+                    android:layout_marginTop="3dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="12sp"
+                        android:layout_marginLeft="25dp"
+                        android:hint="Email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp" />
+                    <TextView
+                        android:id="@+id/tv_profile_email"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:drawableStart="@drawable/ic_pro_email"
+                        android:layout_gravity="center_vertical"
+                        android:text="test@rpsolution.com"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="12sp"
+                        android:layout_marginLeft="25dp"
+                        android:hint="Address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp" />
+                    <TextView
+                        android:id="@+id/tv_profile_address"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:drawableStart="@drawable/ic_address"
+                        android:layout_gravity="center_vertical"
+                        android:text="Silk Board Bangalore"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView
+            >
+    </LinearLayout>
+</ScrollView>
