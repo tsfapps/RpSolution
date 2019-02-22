@@ -7,6 +7,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -52,6 +53,9 @@ public class DashboardActivity extends AppCompatActivity
         String userPass = getIntent().getStringExtra(ConstantVal.PASS);
         int userType = getIntent().getIntExtra(ConstantVal.USER, defaultValue);
         getSupportFragmentManager().beginTransaction().replace(R.id.container_main, ProfileFragment.newInstance(phoneNumber, userPass, userType)).commit();
+        if (userType == 1){
+            hideItem();
+        }
     }
 
     @Override
@@ -64,8 +68,11 @@ public class DashboardActivity extends AppCompatActivity
         }
     }
 
-    private void getValue(){
+    private void hideItem()
+    {
 
+        Menu nav_Menu = navigationView.getMenu();
+        nav_Menu.findItem(R.id.nav_manage).setVisible(false);
     }
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -83,6 +90,7 @@ public class DashboardActivity extends AppCompatActivity
         } else if (id == R.id.nav_apply_leave) {
             getSupportFragmentManager().beginTransaction().replace(R.id.container_main, ApplyLeaveFragment.newInstance(phoneNumber, userPass, userType)).commit();
         }  else if (id == R.id.nav_manage) {
+
             getSupportFragmentManager().beginTransaction().replace(R.id.container_main, new LeaveManageFragment()).commit();
 
         } else if (id == R.id.nav_leave) {
