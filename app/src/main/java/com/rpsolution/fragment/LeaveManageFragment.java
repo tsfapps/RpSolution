@@ -26,7 +26,7 @@ public class LeaveManageFragment extends Fragment {
     private List<EmployeeModel> employeeModels = new ArrayList<>();
     private LeaveManageAdapter mAdapter;
     private DashboardActivity mActivity;
-    @BindView(R.id.rv_leaveSum)
+    @BindView(R.id.rv_leaveManage)
     protected RecyclerView mRecyclerView;
 
     @Nullable
@@ -42,7 +42,7 @@ public class LeaveManageFragment extends Fragment {
     private void initRecyclerView(){
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new LeaveManageAdapter(employeeModels);
+        mAdapter = new LeaveManageAdapter(getContext(),employeeModels);
         mRecyclerView.setAdapter(mAdapter);
         empIdSet();
 
@@ -60,13 +60,13 @@ public class LeaveManageFragment extends Fragment {
         String[] empId = {"Emp001","Emp002","Emp003","Emp004","Emp005","Emp006","Emp007","Emp008",
                 "Emp009","Emp011","Emp012","Emp013","Emp014","Emp015","Emp016","Emp017","Emp018","Emp019","Emp020","Emp021","Emp022",
                 "Emp023","Emp024","Emp025","Emp026","Emp027","Emp028","Emp029","Emp030","Emp031","Emp032",};
-        for (int i = 0; i< empId.length; i++) {
-            EmployeeModel employeeModel = new EmployeeModel(empId[i]);
+        for(String anEmpId : empId) {
+            EmployeeModel employeeModel = new EmployeeModel(anEmpId);
             employeeModels.add(employeeModel);
-            mAdapter.notifyDataSetChanged();
+
         }
 
-
+        mAdapter.notifyDataSetChanged();
     }
 
 

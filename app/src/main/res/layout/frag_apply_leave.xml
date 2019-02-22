@@ -10,11 +10,13 @@
     android:fillViewport="true">
 
     <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     <android.support.v7.widget.CardView
         android:layout_gravity="center"
-        app:cardCornerRadius="24dp"
+        app:cardCornerRadius="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
@@ -23,22 +25,34 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <TextView
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:textColor="@color/colorPrimary"
+                android:text="Leave Application"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
     <TextView
+        android:layout_marginTop="16dp"
         android:id="@+id/tv_subject"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:hint="Subject"
         />
 
                 <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp"
                     android:id="@+id/rg_applyLeave"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 <RadioButton
     android:id="@+id/rb_casual"
     android:text="Casual Leave"
-    android:textSize="12sp"
-    android:layout_width="wrap_content"
+    android:layout_width="0dp"
+    android:layout_weight="1"
     android:layout_height="wrap_content" />
 <RadioButton
     android:id="@+id/rb_sick"
@@ -48,13 +62,12 @@
                 </RadioGroup>
             <LinearLayout
                 android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
+
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <LinearLayout
-                    android:id="@+id/ll_date_depart"
+                    android:id="@+id/ll_date_from"
                     android:orientation="vertical"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -72,7 +85,7 @@
                         android:layout_height="match_parent"/>
                     <TextView
                         android:id="@+id/tv_date_from"
-                        android:textSize="16dp"
+                        android:textSize="16sp"
                         android:textColor="@color/black"
                         android:text="Select date from"
                         android:layout_width="match_parent"
@@ -86,7 +99,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/ll_date_arrival"
+                    android:id="@+id/ll_date_to"
                     android:orientation="vertical"
                     android:gravity="end"
                     android:layout_width="0dp"
@@ -105,16 +118,27 @@
                         android:layout_height="wrap_content" />
                     <TextView
                         android:id="@+id/tv_date_to"
-                        android:textSize="16dp"
+                        android:textSize="16sp"
                         android:textColor="@color/black"
                         android:text="Select date to"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                 </LinearLayout>
-
             </LinearLayout>
-    <android.support.v7.widget.CardView
+            <EditText
+                android:layout_marginTop="16dp"
+                android:id="@+id/et_messageLeaveApply"
+                android:padding="4dp"
+                android:background="@drawable/et_bg"
+                android:minLines="5"
+                android:gravity="start"
+                android:hint="Message"
+                android:textSize="13sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <android.support.v7.widget.CardView
         android:layout_marginTop="16dp"
         android:layout_gravity="center_horizontal"
         app:cardCornerRadius="10dp"

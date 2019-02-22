@@ -5,12 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -36,20 +36,18 @@ public class ApplyLeaveFragment extends Fragment {
 
     @BindView(R.id.tv_subject)
     protected TextView tvSubject;
-
     @BindView(R.id.rg_applyLeave)
     protected RadioGroup rgApplyLeave;
-
     @BindView(R.id.rb_casual)
-            protected RadioButton rbCasual;
-
+    protected RadioButton rbCasual;
     @BindView(R.id.rb_sick)
-            protected RadioButton rbSick;
-
+    protected RadioButton rbSick;
     @BindView(R.id.tv_date_to)
     protected TextView tvDateTo;
- @BindView(R.id.tv_date_from)
+    @BindView(R.id.tv_date_from)
     protected TextView tvDateFrom;
+    @BindView(R.id.et_messageLeaveApply)
+    protected EditText etMessageLeaveApply;
 
     private RadioButton rbLeaveButton;
     final Calendar myCalendar = Calendar.getInstance();
@@ -72,12 +70,12 @@ public class ApplyLeaveFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_apply_leave, container, false);
         ButterKnife.bind(this, view);
-        subject = "Leave request by "+userType+userPass+userPhone;
+        subject = "Leave requested by "+userType+userPass+userPhone;
         tvSubject.setText(subject);
         setTitle();
         return view;
     }
-    @OnClick(R.id.ll_date_depart)
+    @OnClick(R.id.ll_date_from)
     public void llDateDepartClick(View view){
         DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
 
@@ -133,6 +131,7 @@ public class ApplyLeaveFragment extends Fragment {
     private void sendMAil(){
         int selectedId = rgApplyLeave.getCheckedRadioButtonId();
         rbLeaveButton =  Objects.requireNonNull(getActivity()).findViewById(selectedId);
+        String messageStr = etMessageLeaveApply.getText().toString().trim();
 
 
         if(selectedId==-1){
@@ -144,14 +143,18 @@ public class ApplyLeaveFragment extends Fragment {
             String dateFrom = tvDateFrom.getText().toString().trim();
             String dateTo = tvDateTo.getText().toString().trim();
             String dateDiff = DateUtils.timeDiff(dateFrom, dateTo);
-            String content = "Emp Id : "+userType+userPass+userPhone+"\nReason : "+rbLeaveButton.getText().toString().trim()+"\nFrom : "+dateFrom+ " \nTo : "+dateTo+"\nTotal Leave : "+dateDiff;
+            String content = "Emp Id : "+userType+userPass+userPhone+"\nReason : "
+                    +rbLeaveButton.getText().toString().trim()+"\nFrom : "+dateFrom+
+                    " \nTo : "+dateTo+"\nTotal Leave : "+dateDiff + "\nMessage : \n\t\t"+messageStr;
             Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
             emailIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             emailIntent.setType("plain/text");
             if (userType == 1) {
                 emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"manager@gmail.com"});
-            }else {
+            }else if(userType == 2) {
                 emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"admin@gmail.com"});
+            }else {
+                emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"superadmin@gmail.com"});
             }
             emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
             emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, content);

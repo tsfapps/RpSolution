@@ -15,6 +15,7 @@ import com.rpsolution.R;
 import com.rpsolution.fragment.ApplyLeaveFragment;
 import com.rpsolution.fragment.LeaveCalFragment;
 import com.rpsolution.fragment.LeaveManageFragment;
+import com.rpsolution.fragment.LeaveSumFragment;
 import com.rpsolution.fragment.ProfileFragment;
 import com.rpsolution.utils.ConstantVal;
 
@@ -87,6 +88,8 @@ public class DashboardActivity extends AppCompatActivity
 
         }
         else if (id == R.id.nav_leave_summary) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_main, LeaveSumFragment.newInstance(phoneNumber, userPass, userType)).commit();
+
         } else if (id == R.id.nav_apply_leave) {
             getSupportFragmentManager().beginTransaction().replace(R.id.container_main, ApplyLeaveFragment.newInstance(phoneNumber, userPass, userType)).commit();
         }  else if (id == R.id.nav_manage) {

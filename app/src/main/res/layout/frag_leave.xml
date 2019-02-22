@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <android.support.v7.widget.CardView
-        android:layout_margin="16dp"
+        android:layout_margin="8dp"
         app:cardCornerRadius="16dp"
         android:layout_width="match_parent"
         android:layout_height="250dp">
@@ -35,4 +35,13 @@
         android:textColor="#949393"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <TextView
+        android:layout_margin="16dp"
+        android:gravity="bottom"
+        android:layout_gravity="center_horizontal"
+        android:text="Red pointed dates are leave dates"
+        android:textSize="12dp"
+        android:textColor="@color/red_transparent"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
 </LinearLayout>

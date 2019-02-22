@@ -9,8 +9,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:id="@+id/tv_empId"
-            android:text="emp id"
+            android:gravity="center_horizontal"
+            android:id="@+id/tv_sumMonth"
+            android:text="Month"
+            android:textSize="13sp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
@@ -19,10 +21,12 @@
             android:layout_width="1dp"
             android:layout_height="match_parent"/>
         <TextView
-            android:id="@+id/tv_approve"
+            android:gravity="center_horizontal"
+            android:id="@+id/tv_sumSick"
+            android:textSize="13sp"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
-            android:text="Approve"
+            android:text="Sick Leave"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
@@ -31,15 +35,30 @@
             android:layout_width="1dp"
             android:layout_height="match_parent"/>
         <TextView
-            android:id="@+id/tv_reject"
+            android:gravity="center_horizontal"
+            android:id="@+id/tv_sumCasual"
+            android:textSize="13sp"
             android:layout_marginStart="5dp"
-            android:text="Reject"
+            android:text="Casual Leave"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/> <View
+            android:background="@color/grey"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:gravity="center_horizontal"
+            android:id="@+id/tv_sumTotal"
+            android:textSize="13sp"
+            android:layout_marginStart="5dp"
+            android:text="Total Leave"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
     </LinearLayout>
-<View
-    android:background="@color/grey"
-    android:layout_width="match_parent"
-    android:layout_height="1dp"/>
+    <View
+        android:background="@color/grey"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
 </LinearLayout>
