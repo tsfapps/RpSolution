@@ -38,7 +38,14 @@ public class LoginActivity extends AppCompatActivity {
         if (userType > 0){
             switch (userType){
                 case 1 :
-                    if (!userPhone.equals("12345") || !userPass.equals("employee")){
+                    if (userPhone.equals("")){
+                        Toast.makeText(LoginActivity.this,"Write the phone number", Toast.LENGTH_SHORT).show();
+                    }
+
+                   else if (userPass.equals("")){
+                        Toast.makeText(LoginActivity.this,"Write the password", Toast.LENGTH_SHORT).show();
+                    }
+                   else if (!userPhone.equals("12345") || !userPass.equals("employee")){
                         toastError();
                     }
                     else {
@@ -50,7 +57,14 @@ public class LoginActivity extends AppCompatActivity {
                     }
                     break;
                 case 2 :
-                    if (!userPhone.equals("54321") || !userPass.equals("manager")){
+                    if (userPhone.equals("")){
+                        Toast.makeText(LoginActivity.this,"Write the phone number", Toast.LENGTH_SHORT).show();
+                    }
+
+                    else if (userPass.equals("")){
+                        Toast.makeText(LoginActivity.this,"Write the password", Toast.LENGTH_SHORT).show();
+                    }
+                   else if (!userPhone.equals("54321") || !userPass.equals("manager")){
                             toastError();
                     }
                     else {
@@ -62,7 +76,14 @@ public class LoginActivity extends AppCompatActivity {
                     }
                     break;
                 case 3 :
-                    if (!userPhone.equals("09876") || !userPass.equals("admin")){
+                    if (userPhone.equals("")){
+                        Toast.makeText(LoginActivity.this,"Write the phone number", Toast.LENGTH_SHORT).show();
+                    }
+
+                    else if (userPass.equals("")){
+                        Toast.makeText(LoginActivity.this,"Write the password", Toast.LENGTH_SHORT).show();
+                    }
+                   else if (!userPhone.equals("09876") || !userPass.equals("admin")){
                         toastError();
                     }
                     else {

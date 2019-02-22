@@ -12,14 +12,13 @@ import android.widget.TextView;
 
 import com.rpsolution.R;
 import com.rpsolution.fragment.ApplyLeaveFragment;
-import com.rpsolution.fragment.LeaveFragment;
+import com.rpsolution.fragment.LeaveCalFragment;
+import com.rpsolution.fragment.LeaveManageFragment;
 import com.rpsolution.fragment.ProfileFragment;
 import com.rpsolution.utils.ConstantVal;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
-import static com.rpsolution.utils.ConstantVal.USER;
 
 public class DashboardActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -81,14 +80,14 @@ public class DashboardActivity extends AppCompatActivity
 
         }
         else if (id == R.id.nav_leave_summary) {
-
         } else if (id == R.id.nav_apply_leave) {
             getSupportFragmentManager().beginTransaction().replace(R.id.container_main, ApplyLeaveFragment.newInstance(phoneNumber, userPass, userType)).commit();
         }  else if (id == R.id.nav_manage) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_main, new LeaveManageFragment()).commit();
 
         } else if (id == R.id.nav_leave) {
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.container_main, new LeaveFragment()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_main, new LeaveCalFragment()).commit();
         }
 
         DrawerLayout drawer =  findViewById(R.id.drawer_layout);

@@ -26,7 +26,7 @@ import java.util.Locale;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class LeaveFragment extends Fragment {
+public class LeaveCalFragment extends Fragment {
 
     private DashboardActivity mActivity;
     private SimpleDateFormat dateFormat = new SimpleDateFormat("MMM yyyy", Locale.getDefault());
